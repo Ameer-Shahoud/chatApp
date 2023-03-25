@@ -1,0 +1,51 @@
+<div
+  style="min-height: 80%"
+  class="d-flex justify-content-center align-items-center"
+>
+  <div style="box-shadow: 0 0 5px black; width: 500px" class="p-4 rounded-2">
+    <h1 style="font-size: 2.5rem">Sign Up</h1>
+    <form [formGroup]="signupForm" (ngSubmit)="onSignup()">
+      <mat-form-field class="mt-4 w-100" appearance="outline">
+        <mat-label>Display Name</mat-label>
+        <input
+          formControlName="displayName"
+          type="text"
+          matInput
+          placeholder="Ex. Ameer Shahoud"
+        />
+        <mat-error *ngIf="displayNameControl.hasError('required')">
+          Display name is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="mt-2 w-100" appearance="outline">
+        <mat-label>Email</mat-label>
+        <input
+          formControlName="email"
+          type="email"
+          matInput
+          placeholder="Ex. pat@example.com"
+        />
+        <mat-error *ngIf="emailControl.hasError('required')">
+          Email is <strong>required</strong>
+        </mat-error>
+        <mat-error *ngIf="emailControl.hasError('email')">
+          Invalid Email
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="mt-2 mb-2 w-100" appearance="outline">
+        <mat-label>Password</mat-label>
+        <input formControlName="password" type="password" matInput />
+        <mat-error *ngIf="passwordControl.hasError('required')">
+          Password is <strong>required</strong>
+        </mat-error>
+        <mat-error *ngIf="passwordControl.hasError('minlength')">
+          Password minimum length is 6
+        </mat-error>
+      </mat-form-field>
+      <button mat-flat-button color="accent">Create Account</button>
+      <a class="text-decoration-none fw-bold ms-2" routerLink="/signin"
+        >Already have an account? Go to signin</a
+      >
+    </form>
+  </div>
+</div>

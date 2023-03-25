@@ -1,0 +1,67 @@
+[debug] [2023-03-25T17:00:09.873Z] ----------------------------------------------------------------------
+[debug] [2023-03-25T17:00:09.875Z] Command:       C:\Program Files (x86)\nodejs\node.exe C:\Users\amirs\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js projects:create --display-name 'getStream chat'
+[debug] [2023-03-25T17:00:09.876Z] CLI Version:   11.9.0
+[debug] [2023-03-25T17:00:09.876Z] Platform:      win32
+[debug] [2023-03-25T17:00:09.876Z] Node Version:  v16.14.0
+[debug] [2023-03-25T17:00:09.877Z] Time:          Sat Mar 25 2023 10:00:09 GMT-0700 (Pacific Daylight Time)
+[debug] [2023-03-25T17:00:09.877Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-03-25T17:00:09.882Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2023-03-25T17:00:09.908Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-03-25T17:00:09.909Z] > authorizing via signed-in user (amir.shahood.1997@gmail.com)
+[debug] [2023-03-25T17:00:09.954Z] > refreshing access token with scopes: []
+[debug] [2023-03-25T17:00:09.956Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2023-03-25T17:00:09.956Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-03-25T17:00:10.758Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2023-03-25T17:00:10.759Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-03-25T17:00:10.855Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects [none]
+[debug] [2023-03-25T17:00:10.855Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects {"projectId":"chat'","name":"'getStream"}
+[debug] [2023-03-25T17:00:11.307Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2023-03-25T17:00:11.308Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
+[debug] [2023-03-25T17:00:12.240Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects 400
+[debug] [2023-03-25T17:00:12.240Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects {"error":{"code":400,"message":"Request contains an invalid argument.","status":"INVALID_ARGUMENT","details":[{"@type":"type.googleapis.com/google.rpc.BadRequest","fieldViolations":[{"field":"project_id","description":"project_id must be at least 6 characters long"},{"field":"project_id","description":"project_id contains invalid characters"}]},{"@type":"type.googleapis.com/google.rpc.Help","links":[{"url":"https://cloud.google.com/resource-manager/reference/rest/v1/projects"}]}]}}
+[debug] [2023-03-25T17:00:14.100Z] FirebaseError: HTTP Error: 400, Request contains an invalid argument.
+    at responseToError (C:\Users\amirs\AppData\Roaming\npm\node_modules\firebase-tools\lib\responseToError.js:49:12)
+    at RetryOperation._fn (C:\Users\amirs\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:288:77)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[error] 
+[error] Error: Failed to create project. See firebase-debug.log for more info.
+[debug] [2023-03-25T17:00:42.922Z] ----------------------------------------------------------------------
+[debug] [2023-03-25T17:00:42.924Z] Command:       C:\Program Files (x86)\nodejs\node.exe C:\Users\amirs\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js projects:create --display-name 'getStream chat'
+[debug] [2023-03-25T17:00:42.925Z] CLI Version:   11.9.0
+[debug] [2023-03-25T17:00:42.925Z] Platform:      win32
+[debug] [2023-03-25T17:00:42.925Z] Node Version:  v16.14.0
+[debug] [2023-03-25T17:00:42.926Z] Time:          Sat Mar 25 2023 10:00:42 GMT-0700 (Pacific Daylight Time)
+[debug] [2023-03-25T17:00:42.926Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-03-25T17:00:42.938Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-03-25T17:00:42.938Z] > authorizing via signed-in user (amir.shahood.1997@gmail.com)
+[debug] [2023-03-25T17:00:42.954Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects [none]
+[debug] [2023-03-25T17:00:42.954Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects {"projectId":"chat'","name":"'getStream"}
+[debug] [2023-03-25T17:00:44.231Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects 400
+[debug] [2023-03-25T17:00:44.232Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects {"error":{"code":400,"message":"Request contains an invalid argument.","status":"INVALID_ARGUMENT","details":[{"@type":"type.googleapis.com/google.rpc.BadRequest","fieldViolations":[{"field":"project_id","description":"project_id must be at least 6 characters long"},{"field":"project_id","description":"project_id contains invalid characters"}]},{"@type":"type.googleapis.com/google.rpc.Help","links":[{"url":"https://cloud.google.com/resource-manager/reference/rest/v1/projects"}]}]}}
+[debug] [2023-03-25T17:00:44.612Z] FirebaseError: HTTP Error: 400, Request contains an invalid argument.
+    at responseToError (C:\Users\amirs\AppData\Roaming\npm\node_modules\firebase-tools\lib\responseToError.js:49:12)
+    at RetryOperation._fn (C:\Users\amirs\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:288:77)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[error] 
+[error] Error: Failed to create project. See firebase-debug.log for more info.
+[debug] [2023-03-25T17:15:03.120Z] ----------------------------------------------------------------------
+[debug] [2023-03-25T17:15:03.122Z] Command:       C:\Program Files (x86)\nodejs\node.exe C:\Users\amirs\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js projects:create --display-name 'getStream chat'
+[debug] [2023-03-25T17:15:03.123Z] CLI Version:   11.9.0
+[debug] [2023-03-25T17:15:03.123Z] Platform:      win32
+[debug] [2023-03-25T17:15:03.123Z] Node Version:  v16.14.0
+[debug] [2023-03-25T17:15:03.124Z] Time:          Sat Mar 25 2023 10:15:03 GMT-0700 (Pacific Daylight Time)
+[debug] [2023-03-25T17:15:03.125Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-03-25T17:15:03.140Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-03-25T17:15:03.141Z] > authorizing via signed-in user (amir.shahood.1997@gmail.com)
+[debug] [2023-03-25T17:15:03.158Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects [none]
+[debug] [2023-03-25T17:15:03.158Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects {"projectId":"chat'","name":"'getStream"}
+[debug] [2023-03-25T17:15:04.687Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects 403
+[debug] [2023-03-25T17:15:04.689Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects "<!DOCTYPE html>\n<html lang=en>\n  <meta charset=utf-8>\n  <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\">\n  <title>Error 403 (Forbidden)!!1</title>\n  <style>\n    *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:15px}body{margin:7% auto 0;max-width:390px;min-height:180px;padding:30px 0 15px}* > body{background:url(//www.google.com/images/errors/robot.png) 100% 5px no-repeat;padding-right:205px}p{margin:11px 0 22px;overflow:hidden}ins{color:#777;text-decoration:none}a img{border:0}@media screen and (max-width:772px){body{background:none;margin-top:0;max-width:none;padding-right:0}}#logo{background:url(//www.google.com/images/branding/googlelogo/1x/googlelogo_color_150x54dp.png) no-repeat;margin-left:-5px}@media only screen and (min-resolution:192dpi){#logo{background:url(//www.google.com/images/branding/googlelogo/2x/googlelogo_color_150x54dp.png) no-repeat 0% 0%/100% 100%;-moz-border-image:url(//www.google.com/images/branding/googlelogo/2x/googlelogo_color_150x54dp.png) 0}}@media only screen and (-webkit-min-device-pixel-ratio:2){#logo{background:url(//www.google.com/images/branding/googlelogo/2x/googlelogo_color_150x54dp.png) no-repeat;-webkit-background-size:100% 100%}}#logo{display:inline-block;height:54px;width:150px}\n  </style>\n  <a href=//www.google.com/><span id=logo aria-label=Google></span></a>\n  <p><b>403.</b> <ins>That’s an error.</ins>\n  <p>Your client does not have permission to get URL <code>/v1/projects</code> from this server.  <ins>That’s all we know.</ins>\n"
+[debug] [2023-03-25T17:15:05.061Z] FirebaseError: Unable to parse JSON: SyntaxError: Unexpected token < in JSON at position 0
+    at RetryOperation._fn (C:\Users\amirs\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:260:39)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[error] 
+[error] Error: Failed to create project. See firebase-debug.log for more info.
