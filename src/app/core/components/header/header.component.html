@@ -2,16 +2,22 @@
   <span>GetStream Chat App</span>
 
   <div class="d-flex">
-    <button
-      class="me-2"
-      mat-button
-      routerLink="/signin"
-      routerLinkActive="active"
-    >
-      Sign In
-    </button>
-    <button mat-button routerLink="/signup" routerLinkActive="active">
-      Sign Up
-    </button>
+    <ng-container *ngIf="!isLoggedIn">
+      <button
+        class="me-2"
+        mat-button
+        routerLink="/signin"
+        routerLinkActive="active"
+      >
+        Sign In
+      </button>
+      <button mat-button routerLink="/signup" routerLinkActive="active">
+        Sign Up
+      </button>
+    </ng-container>
+    <ng-container *ngIf="isLoggedIn">
+      <span class="me-4">{{ displayName }}</span>
+      <button mat-button (click)="onLogout()">Sign Out</button>
+    </ng-container>
   </div>
 </mat-toolbar>

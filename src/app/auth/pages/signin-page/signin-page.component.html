@@ -1,6 +1,6 @@
 <div
   style="min-height: 80%"
-  class="d-flex justify-content-center align-items-center"
+  class="d-flex flex-column justify-content-center align-items-center"
 >
   <div style="box-shadow: 0 0 5px black; width: 500px" class="p-4 rounded-2">
     <h1 style="font-size: 2.5rem">Sign In</h1>
@@ -30,7 +30,12 @@
           Password minimum length is 6
         </mat-error>
       </mat-form-field>
-      <button class="mt-2" mat-flat-button color="accent">Sign In</button>
+      <button class="mt-2" mat-flat-button color="accent">
+        <ng-container *ngIf="!isLoading"> Sign In </ng-container
+        ><ng-container *ngIf="isLoading"
+          ><mat-spinner diameter="20" color="primary"></mat-spinner
+        ></ng-container>
+      </button>
     </form>
   </div>
 </div>

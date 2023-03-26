@@ -1,6 +1,6 @@
 <div
   style="min-height: 80%"
-  class="d-flex justify-content-center align-items-center"
+  class="d-flex flex-column justify-content-center align-items-center"
 >
   <div style="box-shadow: 0 0 5px black; width: 500px" class="p-4 rounded-2">
     <h1 style="font-size: 2.5rem">Sign Up</h1>
@@ -42,7 +42,13 @@
           Password minimum length is 6
         </mat-error>
       </mat-form-field>
-      <button mat-flat-button color="accent">Create Account</button>
+
+      <button mat-flat-button color="accent">
+        <ng-container *ngIf="!isLoading"> Create Account </ng-container>
+        <ng-container *ngIf="isLoading"
+          ><mat-spinner diameter="20" color="primary"></mat-spinner
+        ></ng-container>
+      </button>
       <a class="text-decoration-none fw-bold ms-2" routerLink="/signin"
         >Already have an account? Go to signin</a
       >

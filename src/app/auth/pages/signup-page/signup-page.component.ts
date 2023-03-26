@@ -1,13 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { AuthService } from '../../services/auth/auth.service';
 import { FormBuilder, Validators } from '@angular/forms';
+import { Subject, takeUntil } from 'rxjs';
 
 @Component({
   selector: 'my-signup-page',
   templateUrl: './signup-page.component.html',
   styleUrls: ['./signup-page.component.css'],
 })
-export class SignupPageComponent {
+export class SignupPageComponent implements OnInit, OnDestroy {
+  isLoading!: boolean;
+
+  private destroySubscribtions = new Subject();
+
   signupForm = this.fb.nonNullable.group({
     displayName: ['', [Validators.required]],
     email: ['', [Validators.required, Validators.email]],
@@ -26,7 +31,13 @@ export class SignupPageComponent {
 
   constructor(private authService: AuthService, private fb: FormBuilder) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.authService.authState$
+      .pipe(takeUntil(this.destroySubscribtions))
+      .subscribe((authState) => {
+        this.isLoading = authState.isLoading;
+      });
+  }
 
   onSignup() {
     if (!this.signupForm.valid) {
@@ -39,6 +50,11 @@ export class SignupPageComponent {
         this.emailControl.value,
         this.passwordControl.value
       )
-      .subscribe((res) => console.log(res));
+      .pipe(takeUntil(this.destroySubscribtions))
+      .subscribe();
+  }
+
+  ngOnDestroy(): void {
+    this.destroySubscribtions.complete();
   }
 }

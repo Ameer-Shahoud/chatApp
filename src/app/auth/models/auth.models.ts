@@ -14,6 +14,8 @@ export interface SigninResponse extends SignupResponse {
 
 export interface AuthState {
   isLoggedIn: boolean;
+  isLoading: boolean;
+  error: string | null;
   user: User | null;
   idToken: string;
   refreshToken: string;
